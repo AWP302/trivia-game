@@ -35,28 +35,41 @@ $(document).ready(function() {
 var correct = 0;
 var wrong = 0;
 var q1 = {
-	question : 'If you were to fall and hurt yourself in a grocery store what would be the basis of your claim?',
-	possibleAnswers : ['A. Breach of Contract',
-				 'B. Criminal Negligence',
-				 'C. Misdemeanour',
-				 'D. Tort'],
+	question : 'Scenario: You are walking along a crowded subway platform. Someone is walking towards you checking to see whether their latest instagram is trending. What do you do?',
+	possibleAnswers : ['A. Politely and cautiously move out of their way.',
+				 'B. Politely say "excuse me" to alert them of an impending colision.',
+				 'C. Stop dead to avoid a collision and give them some side-eye.',
+				 'D. Keep walking and knock them onto the tracks.'],
 	flags : [false, false, false, true],
-	answer : 'D. Tort'
+	
 };
 
 var q2 = {
-	question: 'Who could you legally sell securities to without a prospectus?',
-	possibleAnswers: ['A. A Lawyer',
-				 'B. Your mother',
-				 'C. The general public',
-				 'D. A charitable organization'],
-	flags : [false, true, false, false],
-	answer : 'B. Michael Crawford'
+	question: 'What is the only appropriate thing to wear on your back on a crowded subway train?',
+	possibleAnswers: ['A. A knapsack',
+				 'B. A Foodora delivery bag',
+				 'C. My newspaper. If you insist on taking up so much space them I am going to use you as my desktop.',
+				 'D. Cosplay angel wings'],
+	flags : [false, false, true, false],
+	
+};
+
+var q3 = {
+	question: 'Scenario: You are approaching your stop. At least two people are standing in the doorway and clearly do not intend to move to let you off the train. What do you do?',
+	possibleAnswers: ['A. Glare at them',
+				 'B. Remind them that you have to be an idiot to miss your stop.',
+				 'C. When the door opens, push them onto the platform.',
+				 'D. All of the above.'],
+	flags : [false, false, false, true],
+	
 };
 
 
 
-var questionArray = [q1, q2,];
+
+
+
+var questionArray = [q1, q2, q3];
 
 function loadQuestion(questionSelection) {
 	
@@ -81,33 +94,29 @@ function setup() {
 	});
 }		
 
-function getAnswer() {
+// function getAnswer() {
 
-//  nextQuestion();
-	$('.answerchoice').on('click', function() {
-	  console.log('alert', index);
-		index++;
-		console.log('click', index);
-		$(".question").text('');
-		$("#buttonA").text('');
-		$("#buttonB").text('');
-		$("#buttonC").text('');
-		$("#buttonD").text('');
-		loadQuestion();
-	})
-}
+// //  nextQuestion();
+// 	$('.answerchoice').on('click', function() {
+// 	  console.log('alert', index);
+// 		index++;
+// 		console.log('click', index);
+// 		$(".question").text('');
+// 		$("#buttonA").text('');
+// 		$("#buttonB").text('');
+// 		$("#buttonC").text('');
+// 		$("#buttonD").text('');
+// 		loadQuestion();
+// 	})
+// }
 
 function answerCorrect() {
 	correct++;
-	alert("Correct!");
-	console.log("correct");
-}
+	}
 
 function answerWrong() {
 	wrong++;
-	alert("Incorrect!");
-	console.log("wrong");
-}
+	}
 
 function showScore() {
 	$('.question').empty();
